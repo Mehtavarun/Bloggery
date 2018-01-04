@@ -1,26 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Slider from 'react-slick';
-
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
-
-var settings = {
-      dots: true,
-      infinite: true,
-      speed: 1000,
-      slidesToShow: 1,
-      slidesToScroll: 1,
-      autoplay:true,
-      pauseOnHover:false
-    };
+import './css/main.css';
 
 export default class Main extends React.Component{
 	render(){
-		return(<Slider {...settings}>
-        <div><img src={require('./images/1.jpg')} /></div>
-        <div><img src={require("./images/2.jpg")} /></div>
-        <div><img src={require("./images/3.jpg")} /></div>
-      </Slider>)
+		return(
+			<div class = "wrapper">
+				<div class = "top">
+				 	<h2>Start Blogging Today</h2>
+				 	<button></button>
+				</div>
+			</div>
+      )
 	}
 }

@@ -1,0 +1,22 @@
+.wrapper{
+	padding: 0px;
+	margin: -8px;
+	color:white;
+	font-family: Lucida Sans Unicode; 
+}
+.top{
+	background-image: url('../images/main.jpg');
+	background-repeat: no-repeat;
+	background-size: cover;
+	overflow: hidden;
+	background-position: center;
+	height: 656px;
+	margin: 0px;
+}
+h2{
+	text-align: center;
+	font-size:365%;
+	margin-top: 180px;
+	margin-bottom: 0px;
+	font-weight: normal;
+}

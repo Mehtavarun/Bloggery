@@ -5,7 +5,7 @@ import Main from './Components/main';
 class App extends React.Component{
 	render(){
 		return(
-			<Main />
+			<Main class='body'/>
 		)
 	}
 }
