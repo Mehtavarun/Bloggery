@@ -1,17 +1,17 @@
 .wrapper{
 	padding: 0px;
 	margin: -8px;
-	color:white;
 	font-family: Lucida Sans Unicode; 
+	scroll-behavior: smooth;
 }
 .top{
 	background-image: url('../images/main.jpg');
 	background-repeat: no-repeat;
 	background-size: cover;
 	overflow: hidden;
-	background-position: center;
 	height: 656px;
 	margin: 0px;
+	color:white;
 }
 h2{
 	text-align: center;
@@ -19,4 +19,41 @@ h2{
 	margin-top: 180px;
 	margin-bottom: 0px;
 	font-weight: normal;
+}
+#getStartedButton,#signInButton{
+	padding:13px;
+	padding-left: 80px;
+	padding-right: 80px;
+	border-radius: 1%;
+	font-weight: bold;
+	margin-left: 540px;
+	font-size: 120%;
+	margin-top: 10px;
+	background-color: #3d5afe;
+	border-color: #3d5afe;
+	color: white;
+	animation-delay: 1s;
+}
+#signInButton{
+	padding-left: 100px;
+	padding-right: 100px;
+
+}
+.middle{
+	display: grid;
+	grid-template-columns: auto auto auto;
+	background-repeat: no-repeat;
+	background-size: cover;
+	overflow: hidden;
+	background-position: center;
+	padding:10px;
+	width: 98.5%;
+	text-align: center;
+}
+hr{
+	vertical-align: center;
+}
+.arrowUp{
+	margin-top: 200px;
+	margin-left: 650px;
 }
