@@ -2,53 +2,49 @@
 	padding: 0px;
 	margin: -8px;
 	font-family: Lucida Sans Unicode; 
+	overflow-x: hidden;
 	scroll-behavior: smooth;
 }
 .top{
 	background-image: url('../images/main.jpg');
 	background-repeat: no-repeat;
-	background-size: cover;
+	background-size: 1350px 590px;
 	overflow: hidden;
-	height: 656px;
+	height: 590px;
 	margin: 0px;
 	color:white;
 }
 h2{
 	text-align: center;
 	font-size:365%;
-	margin-top: 180px;
+	margin-top: 120px;
 	margin-bottom: 0px;
 	font-weight: normal;
-}
-#getStartedButton,#signInButton{
-	padding:13px;
-	padding-left: 80px;
-	padding-right: 80px;
-	border-radius: 1%;
-	font-weight: bold;
-	margin-left: 540px;
-	font-size: 120%;
-	margin-top: 10px;
-	background-color: #3d5afe;
-	border-color: #3d5afe;
-	color: white;
 	animation-delay: 1s;
 }
-#signInButton{
-	padding-left: 100px;
-	padding-right: 100px;
-
-}
-.middle{
+.middle1, .middle2,.middle3{
 	display: grid;
-	grid-template-columns: auto auto auto;
+	grid-template-columns:35% 35%;
+	grid-column-gap: 15%;
+	grid-row-gap:8%;
+	padding-left: 70px;
 	background-repeat: no-repeat;
 	background-size: cover;
 	overflow: hidden;
 	background-position: center;
-	padding:10px;
+	padding-top:100px;
 	width: 98.5%;
 	text-align: center;
+	height: 482px;
+}
+.middle1{
+	background-color: #F44336;
+}
+.middle2{
+	background-color: #CDDC39;
+}
+.middle3{
+	background-color: #8e24aa;
 }
 hr{
 	vertical-align: center;
@@ -56,4 +52,12 @@ hr{
 .arrowUp{
 	margin-top: 200px;
 	margin-left: 650px;
+}
+.firstBlock{
+	font-size: 130%;
+}
+.topText{
+	font-size: 110%;
+	text-align: center;
+	margin-top: -10px;
 }
