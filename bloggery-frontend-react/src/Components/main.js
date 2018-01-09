@@ -10,7 +10,6 @@ import PropTypes from 'prop-types';
 import {deepPurple50} from 'material-ui/styles/colors';
 import ScrollAnimation from 'react-animate-on-scroll';
 import FlatButton from 'material-ui/FlatButton';
-import AppBar from 'material-ui/AppBar';
 import image3 from './images/3.jpg';
 import image1 from './images/1.jpg';
 import image2 from './images/2.jpg';
@@ -44,15 +43,14 @@ export default class Main extends React.Component{
 	    	});
     	})    	
     }
-
-    componentWillUnmount(){
-    	window.removeEventListener('scroll'); 
-    }
-
 	render(){
 		return(
 			<div className = "wrapper">
-				{(this.state.pageYOffset >= 258)?<h3 className='appBar animated slideInDown' >BLOGGERY</h3>:null}
+				{(this.state.pageYOffset >= 258)?
+					<div  className='appBar animated slideInDown' >
+						<h3>BLOGGERY</h3>
+					</div>
+					:null}
 				<FloatingActionButton className="animated fadeInUp" 
 					style={style} 
 					backgroundColor="orange"
@@ -61,6 +59,7 @@ export default class Main extends React.Component{
 			 	</FloatingActionButton>
 			 	<Top />
 				<Mid />
+				<Bottom />
 			</div>
       )
 	}
@@ -118,12 +117,12 @@ class Mid extends React.Component{
 					</p>
 				</ScrollAnimation>
 				<ScrollAnimation animateIn="fadeInRight">
-					<img height='260' src={image3} />
+					<img height='260' src={image3} alt='due to some reasons image is not available'/>
 				</ScrollAnimation>
 			</div>
 			<div className = 'middle2'>
 				<ScrollAnimation animateIn="fadeInLeft">
-					<img height='300' src={image2} />
+					<img height='300' src={image2} alt='due to some reasons image is not available'/>
 				</ScrollAnimation>
 				<ScrollAnimation animateIn="fadeInRight" >
 				<p className='firstBlock'>
@@ -149,7 +148,7 @@ class Mid extends React.Component{
 				</ScrollAnimation>
 
 				<ScrollAnimation animateIn="fadeInLeft">
-					<img height='300' src={image1} />
+					<img height='300' src={image1} alt='due to some reasons image is not available'/>
 				</ScrollAnimation>
 			</div>
 			</div>
@@ -157,6 +156,17 @@ class Mid extends React.Component{
 	}
 }
 
+class Bottom extends React.Component{
+	render(){
+		return(
+			<footer className='bottom'>
+				<a href='https://github.com/Mehtavarun/Bloggery'>Github</a>
+				<a href='https://github.com/Mehtavarun/Bloggery'>Linkedin</a>
+				<h5>Full Stack MERN Project</h5>
+			</footer>
+		)
+	}
+}
 
 const style={
 	animationDelay:'1s',
@@ -172,27 +182,20 @@ const styleButton=[
 		marginLeft: '540px',
 		marginTop: '0px',
 		color: 'white',
-		animationDelay: '1s'},
+		animationDelay: '1s',
+	    fontFamily: 'cursive',
+	    fontSize:'128%' },
 	{
-		paddingLeft: '80px',
 		height: '50px',
-		paddingRight: '80px',
 		marginLeft: '540px',
 		marginTop: '10px',
 		color: 'white',
 		animationDelay: '1s',
-		paddingLeft: '100px',
-		paddingRight: '100px'}
+		paddingLeft: '110px',
+		paddingRight: '108px',
+		fontFamily: 'cursive',
+	    fontSize:'128%'}
 ];
-const appBar = {
-	// position:'fixed',
-	// paddingTop:'10px',
-	// width:'100%',
-	// color:'white',
-	// borderColor:'none',
-	// backgroundColor:'#006064',
-	// marginTop:'100px'
-}
 
 Main.childContextTypes = {
             muiTheme: PropTypes.object.isRequired,
