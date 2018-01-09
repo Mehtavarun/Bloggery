@@ -10,21 +10,42 @@ import PropTypes from 'prop-types';
 import {deepPurple50} from 'material-ui/styles/colors';
 import ScrollAnimation from 'react-animate-on-scroll';
 import FlatButton from 'material-ui/FlatButton';
+import AppBar from 'material-ui/AppBar';
 import image3 from './images/3.jpg';
 import image1 from './images/1.jpg';
-import image2 from './images/2.jpg'
+import image2 from './images/2.jpg';
 
 export default class Main extends React.Component{
+
+	constructor(){
+		super();
+		this.state = {
+			scrollValue:0
+		}
+	}
 
 	getChildContext() {
                 return { muiTheme: getMuiTheme(baseTheme) };
             }
 
+    handleScroll(){
+    	window.scrollBy(0,(this.state.scrollValue%3===0)?516:582);
+    	this.setState((prevState=>{
+    		scrollValue:prevState.scrollValue++
+    	}))
+    }
+
 	render(){
 		return(
 			<div className = "wrapper">
-				<FloatingActionButton className="animated slideInUp" style={style} 
-					backgroundColor="orange">
+				<AppBar
+					title="Bloggery" style={appBar}
+					iconClassNameRight={null} backgroundColor={null}
+				/>
+				<FloatingActionButton className="animated fadeInUp" 
+					style={style} 
+					backgroundColor="orange"
+					onClick={this.handleScroll.bind(this)}>
 			 			<ArrowDownward color={deepPurple50} />
 			 	</FloatingActionButton>
 			 	<Top />
@@ -41,7 +62,7 @@ class Top extends React.Component{
 	}
 	render(){
 		return(
-			<div className = "top animated fadeInDown" >
+			<div className = "top animated fadeInDown">
 			 	<h2 className = "animated fadeInDown">start blog today.</h2>
 			 	<p className = "topText animated fadeIn">you will never forget experience with<br/> bloggery...</p>
 			 	<FlatButton 
@@ -60,7 +81,6 @@ class Top extends React.Component{
 			 		style={styleButton[1]}>
 			 			Sign In
 			 	</FlatButton><br/>
-			 	
 			</div>
 		)
 	}
@@ -74,7 +94,7 @@ class Mid extends React.Component{
 
 	render(){
 		return(
-			<div>
+			<div className = 'middle'>
 			<div className = 'middle1'>
 				<ScrollAnimation animateIn="fadeInLeft" >
 					<p className='firstBlock'>Turns out that when you make it
@@ -127,12 +147,11 @@ class Mid extends React.Component{
 
 
 const style={
-	scrollBehavior: 'smooth',
 	animationDelay:'1s',
 	position:'fixed',
 	left:'1270px',
 	top:'595px'
-}
+};
 const styleButton=[
 	{  
 		paddingLeft: '89px',
@@ -152,7 +171,11 @@ const styleButton=[
 		animationDelay: '1s',
 		paddingLeft: '100px',
 		paddingRight: '100px'}
-]
+];
+const appBar = {
+	position:'fixed',
+	paddingTop:'10px',
+}
 
 Main.childContextTypes = {
             muiTheme: PropTypes.object.isRequired,

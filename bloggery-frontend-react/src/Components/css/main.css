@@ -9,10 +9,12 @@
 	background-image: url('../images/main.jpg');
 	background-repeat: no-repeat;
 	background-size: 1350px 590px;
+	background-position: bottom;
 	overflow: hidden;
 	height: 590px;
 	margin: 0px;
 	color:white;
+	scroll-behavior: smooth;
 }
 h2{
 	text-align: center;
@@ -22,20 +24,24 @@ h2{
 	font-weight: normal;
 	animation-delay: 1s;
 }
+.middle{
+	scroll-behavior: smooth;
+	
+}
 .middle1, .middle2,.middle3{
 	display: grid;
 	grid-template-columns:35% 35%;
 	grid-column-gap: 15%;
 	grid-row-gap:8%;
 	padding-left: 70px;
-	background-repeat: no-repeat;
-	background-size: cover;
-	overflow: hidden;
+	overflow-y: scroll;
 	background-position: center;
+	overflow-x: hidden;
 	padding-top:100px;
 	width: 98.5%;
 	text-align: center;
 	height: 482px;
+	scroll-behavior: smooth;
 }
 .middle1{
 	background-color: #F44336;
