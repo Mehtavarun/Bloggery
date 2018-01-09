@@ -20,7 +20,8 @@ export default class Main extends React.Component{
 	constructor(){
 		super();
 		this.state = {
-			scrollValue:0
+			scrollValue:0,
+			pageYOffset:window.pageYOffset
 		}
 	}
 
@@ -35,13 +36,23 @@ export default class Main extends React.Component{
     	}))
     }
 
+    componentDidMount(){
+
+    	window.addEventListener('scroll',()=>{
+			this.setState({
+	    		pageYOffset:window.pageYOffset
+	    	});
+    	})    	
+    }
+
+    componentWillUnmount(){
+    	window.removeEventListener('scroll'); 
+    }
+
 	render(){
 		return(
 			<div className = "wrapper">
-				<AppBar
-					title="Bloggery" style={appBar}
-					iconClassNameRight={null} backgroundColor={null}
-				/>
+				{(this.state.pageYOffset >= 258)?<h3 className='appBar animated slideInDown' >BLOGGERY</h3>:null}
 				<FloatingActionButton className="animated fadeInUp" 
 					style={style} 
 					backgroundColor="orange"
@@ -63,6 +74,7 @@ class Top extends React.Component{
 	render(){
 		return(
 			<div className = "top animated fadeInDown">
+					
 			 	<h2 className = "animated fadeInDown">start blog today.</h2>
 			 	<p className = "topText animated fadeIn">you will never forget experience with<br/> bloggery...</p>
 			 	<FlatButton 
@@ -94,7 +106,7 @@ class Mid extends React.Component{
 
 	render(){
 		return(
-			<div className = 'middle'>
+			<div className = 'middle'>			
 			<div className = 'middle1'>
 				<ScrollAnimation animateIn="fadeInLeft" >
 					<p className='firstBlock'>Turns out that when you make it
@@ -173,8 +185,13 @@ const styleButton=[
 		paddingRight: '100px'}
 ];
 const appBar = {
-	position:'fixed',
-	paddingTop:'10px',
+	// position:'fixed',
+	// paddingTop:'10px',
+	// width:'100%',
+	// color:'white',
+	// borderColor:'none',
+	// backgroundColor:'#006064',
+	// marginTop:'100px'
 }
 
 Main.childContextTypes = {

@@ -26,7 +26,6 @@ h2{
 }
 .middle{
 	scroll-behavior: smooth;
-	
 }
 .middle1, .middle2,.middle3{
 	display: grid;
@@ -66,4 +65,15 @@ hr{
 	font-size: 110%;
 	text-align: center;
 	margin-top: -10px;
+}
+.appBar{
+	position:fixed;
+	padding:22px;
+	width:100%;
+	margin-top: 0px;
+	color:white;
+	border-color:none;
+	background-color:#006064;
+	z-index: 20;
+	animation-delay: -0.3s
 }
