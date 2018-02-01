@@ -1,9 +1,8 @@
-.wrapper{
-	padding: 0px;
-	margin: -8px;
-	font-family: cursive; 
-	overflow-x: hidden;
+body{
 	scroll-behavior: smooth;
+	padding:0px;
+	margin:0px;
+	font-family: Lucida Sans Unicode;
 }
 .top{
 	background-image: url('../images/main.jpg');
@@ -14,7 +13,6 @@
 	height: 590px;
 	margin: 0px;
 	color:white;
-	scroll-behavior: smooth;
 }
 h2{
 	text-align: center;
@@ -23,9 +21,6 @@ h2{
 	margin-bottom: 3px;
 	font-weight: normal;
 	animation-delay: 1s;
-}
-.middle{
-	scroll-behavior: smooth;
 }
 .middle1, .middle2,.middle3{
 	display: grid;
@@ -40,7 +35,6 @@ h2{
 	width: 98.5%;
 	text-align: center;
 	height: 482px;
-	scroll-behavior: smooth;
 }
 .middle1{
 	background-color: #F44336;
@@ -66,23 +60,6 @@ hr{
 	text-align: center;
 	margin-top: -10px;
 }
-.appBar{
-	position:fixed;
-	padding:0px;
-	width:100%;
-	margin-top: 0px;
-	color:white;
-	border-color:none;
-	background-color:#006064;
-	z-index: 20;
-	animation-delay: -0.3s
-}
-h3{
-	font-size: 200%;
-	margin:14px;
-	font-family: cursive;
-	margin-left: 25px;
-}
 .bottom{
 	width: 100%;
 	height: 150px;
@@ -90,7 +67,7 @@ h3{
  	padding: 50px;
  	padding-left: 100px;
 }
-a{
+footer a{
 	text-decoration: none;
 	color:white;
 	margin-left: 100px;
@@ -100,4 +77,28 @@ a:hover{
 }
 h5{
 	text-align: center;
+	color: white;
+	margin-top: 100px;
+}
+ul{
+	list-style-type: none;
+	display: inline;
+	color:white;
+	float: right;
+	margin-right: 20px;
+	margin-top: 20px;
+}
+li{
+	display: inline;
+	padding: 10px;
+}
+ul a{
+	text-decoration: none;
+	color:white;
+}
+#welcome{
+	text-align: center;
+	margin-top: 610px;
+	margin-left: 570px;
+	position: absolute;
 }

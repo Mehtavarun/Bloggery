@@ -1,11 +1,11 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import './css/main.css';
 import "animate.css/animate.min.css";
 import baseTheme from 'material-ui/styles/baseThemes/lightBaseTheme';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import ArrowDownward from 'material-ui/svg-icons/navigation/arrow-downward';
 import FloatingActionButton from 'material-ui/FloatingActionButton';
+import TitleBar from './titleBar';
 import PropTypes from 'prop-types';
 import {deepPurple50} from 'material-ui/styles/colors';
 import ScrollAnimation from 'react-animate-on-scroll';
@@ -16,11 +16,12 @@ import image2 from './images/2.jpg';
 
 export default class Main extends React.Component{
 
-	constructor(){
+	constructor(props){
 		super();
 		this.state = {
 			scrollValue:0,
-			pageYOffset:window.pageYOffset
+			welcomeBot:true,
+			pageYOffset:0
 		}
 	}
 
@@ -36,27 +37,24 @@ export default class Main extends React.Component{
     }
 
     componentDidMount(){
-
     	window.addEventListener('scroll',()=>{
 			this.setState({
 	    		pageYOffset:window.pageYOffset
 	    	});
     	})    	
     }
+
 	render(){
 		return(
 			<div className = "wrapper">
-				{(this.state.pageYOffset >= 258)?
-					<div  className='appBar animated slideInDown' >
-						<h3>BLOGGERY</h3>
-					</div>
-					:null}
+			<TitleBar scrollVal={0}/>
 				<FloatingActionButton className="animated fadeInUp" 
 					style={style} 
 					backgroundColor="orange"
 					onClick={this.handleScroll.bind(this)}>
 			 			<ArrowDownward color={deepPurple50} />
 			 	</FloatingActionButton>
+			 	{(this.state.pageYOffset===window.screen.height/4)?null:<h5 id='welcome'>We Welcome you whole heartedly :)</h5>}
 			 	<Top />
 				<Mid />
 				<Bottom />
@@ -67,14 +65,15 @@ export default class Main extends React.Component{
 
 class Top extends React.Component{
 
-	constructor(props){
-		super();
-	}
 	render(){
 		return(
 			<div className = "top animated fadeInDown">
-					
-			 	<h2 className = "animated fadeInDown">start blog today.</h2>
+				<ul>
+					<a href=''><li>Contact Us</li></a>
+					<a href=''><li>Privacy</li></a>
+					<a href='/api'><li>About US</li></a>
+				</ul>
+			 	<h2 className = "animated fadeInDown">start blog today.</h2><br/>
 			 	<p className = "topText animated fadeIn">you will never forget experience with<br/> bloggery...</p>
 			 	<FlatButton 
 			 		id = "getStartedButton" 
@@ -117,12 +116,12 @@ class Mid extends React.Component{
 					</p>
 				</ScrollAnimation>
 				<ScrollAnimation animateIn="fadeInRight">
-					<img height='260' src={image3} alt='due to some reasons image is not available'/>
+					<img height='260' src={image3} alt='due to some reasons is not available'/>
 				</ScrollAnimation>
 			</div>
 			<div className = 'middle2'>
 				<ScrollAnimation animateIn="fadeInLeft">
-					<img height='300' src={image2} alt='due to some reasons image is not available'/>
+					<img height='300' src={image2} alt='due to some reasons is not available'/>
 				</ScrollAnimation>
 				<ScrollAnimation animateIn="fadeInRight" >
 				<p className='firstBlock'>
@@ -136,7 +135,7 @@ class Mid extends React.Component{
 				</ScrollAnimation>
 			</div>
 			<div className = 'middle3'>
-				<ScrollAnimation animateIn="fadeInRight" >
+				<ScrollAnimation animateIn="fadeInLeft" >
 				<p className='firstBlock'>
 					Turns out that when you make it
 					easy to create interesting things, 
@@ -147,8 +146,8 @@ class Mid extends React.Component{
 					</p>
 				</ScrollAnimation>
 
-				<ScrollAnimation animateIn="fadeInLeft">
-					<img height='300' src={image1} alt='due to some reasons image is not available'/>
+				<ScrollAnimation animateIn="fadeInRight">
+					<img height='300' src={image1} alt='due to some reasons is not available'/>
 				</ScrollAnimation>
 			</div>
 			</div>
