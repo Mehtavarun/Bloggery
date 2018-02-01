@@ -12,7 +12,9 @@ export default class TitleBar extends React.Component{
 	constructor(props){
 		super(props);
 		this.state = {
-			pageYOffset:this.props.scrollVal
+			pageYOffset:this.props.scrollVal,
+			showSignInButton:this.props.showSignIn,
+			showSignUpButton:this.props.showSignUp
 		}
 	}
 
@@ -26,7 +28,7 @@ export default class TitleBar extends React.Component{
 	    		pageYOffset:window.pageYOffset
 	    	});
     	})    	
-    }
+	}
     
 	render(){
 		return(
@@ -34,8 +36,16 @@ export default class TitleBar extends React.Component{
 				{(this.state.pageYOffset >= window.screen.height/4)?
 					<div  className='appBar animated slideInDown' >
 						<p id='barTitle'>BLOGGERY</p>
-						<FlatButton style={barButtons}>Sign In</FlatButton>
-						<FlatButton style={barButtons}>Sign Up</FlatButton>
+						{
+							(this.state.showSignInButton)? 
+							<FlatButton style={barButtons}>Sign In</FlatButton>
+							: 	null
+						}
+						{
+							(this.state.showSignUpButton)? 
+							<FlatButton style={barButtons}>Sign Up</FlatButton>
+							: 	null
+						}
 					</div>
 				:null}
 			</div>

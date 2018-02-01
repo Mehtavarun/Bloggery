@@ -38,23 +38,31 @@ export default class Main extends React.Component{
 
     componentDidMount(){
     	window.addEventListener('scroll',()=>{
-			this.setState({
-	    		pageYOffset:window.pageYOffset
-	    	});
-    	})    	
+    		this.setState({
+    			pageYOffset:window.pageYOffset
+    		})
+    	})
     }
 
 	render(){
 		return(
 			<div className = "wrapper">
-			<TitleBar scrollVal={0}/>
+				<TitleBar 
+					scrollVal={0} 
+					showSignUp = {true} 
+					showSignIn = {true}
+					/>
+
 				<FloatingActionButton className="animated fadeInUp" 
 					style={style} 
 					backgroundColor="orange"
 					onClick={this.handleScroll.bind(this)}>
 			 			<ArrowDownward color={deepPurple50} />
 			 	</FloatingActionButton>
-			 	{(this.state.pageYOffset===window.screen.height/4)?null:<h5 id='welcome'>We Welcome you whole heartedly :)</h5>}
+			 	{(this.state.pageYOffset>=window.screen.height/4)?
+			 		<h5 class='welcome animated fadeOut'>We Welcome you whole heartedly :)</h5>
+						:
+					<h5 class='welcome'>We Welcome you whole heartedly :)</h5>}
 			 	<Top />
 				<Mid />
 				<Bottom />
@@ -80,7 +88,8 @@ class Top extends React.Component{
 			 		backgroundColor= '#a4c639' 
 			 		hoverColor="#8AA62F" 
 			 		className = "animated fadeInLeft" 
-			 		style={styleButton[0]}>
+			 		style={styleButton[0]}
+			 		href='/signup'>
 			 			Get Started
 			 	</FlatButton><br/>
 			 	<FlatButton 
@@ -88,7 +97,8 @@ class Top extends React.Component{
 			 		backgroundColor= '#3d5afe' 
 			 		hoverColor="#304FFE"
 			 		className = "animated fadeInRight"
-			 		style={styleButton[1]}>
+			 		style={styleButton[1]}
+			 		href='/signin'>
 			 			Sign In
 			 	</FlatButton><br/>
 			</div>

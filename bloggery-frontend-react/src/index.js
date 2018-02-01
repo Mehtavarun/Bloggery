@@ -2,7 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import Main from './Components/main';
 import Signup from './Components/signup';
-import { BrowserRouter, Link, Route } from 'react-router-dom';
+import Signin from './Components/signin';
+import { BrowserRouter, Route } from 'react-router-dom';
 
 class App extends React.Component{
 	render(){
@@ -11,6 +12,7 @@ class App extends React.Component{
 				<div>
 					<Route exact path='/' component={Main} />
 					<Route exact path='/signup' component={Signup} />
+					<Route exact path='/signin' component={Signin} />
 				</div>
 			</BrowserRouter>
 		)

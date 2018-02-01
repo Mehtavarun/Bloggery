@@ -22,7 +22,7 @@ import Paper from 'material-ui/Paper';
                 return { muiTheme: getMuiTheme(baseTheme) };
             }
 
-    addUser(ev){
+    authenticate(ev){
 
     	console.log(ev.target);
     	ev.preventDefault();
@@ -58,7 +58,7 @@ import Paper from 'material-ui/Paper';
 			</ul>
 
 			<Paper id='form' zDepth={2}><br/><br/>
-				<form onSubmit={this.addUser.bind(this)}>
+				<form onSubmit={this.authenticate.bind(this)}>
 					 <TextField
 						hintText="Email"
 						type='email'
@@ -72,9 +72,6 @@ import Paper from 'material-ui/Paper';
 						name='password'
 						onChange={this.checkPass.bind(this)}
 						value={this.state.pass}
-					/><br/><br/>
-					<TextField
-						hintText="Username"
 					/><br/><br/>
 					<FlatButton type="submit" >Submit</FlatButton>
 				</form><br/>
