@@ -35,16 +35,23 @@ export default class TitleBar extends React.Component{
 			<div className = "wrapper">
 				{(this.state.pageYOffset >= window.screen.height/4)?
 					<div  className='appBar animated slideInDown' >
-						<p id='barTitle'>BLOGGERY</p>
+						<p id='barTitle'><a href='/'>BLOGGERY</a></p>
 						{
 							(this.state.showSignInButton)? 
-							<FlatButton style={barButtons}>Sign In</FlatButton>
-							: 	null
+								<FlatButton 
+								style={barButtons}
+								href='/signin'>
+								Sign In
+								</FlatButton>
+								: 	null
 						}
 						{
 							(this.state.showSignUpButton)? 
-							<FlatButton style={barButtons}>Sign Up</FlatButton>
-							: 	null
+								<FlatButton href='/signup'
+								style={barButtons}>
+								Sign Up
+								</FlatButton>
+								: 	null
 						}
 					</div>
 				:null}
@@ -56,14 +63,15 @@ export default class TitleBar extends React.Component{
 
 const barButtons={
 	color:'white',
-	border:'1px white solid',
+	border:'0px white solid',
 	borderRadius:'5%',
-	marginRight:'15px',
+	backgroundColor:'#00838F',
+	marginRight:'25px',
 	marginTop:'-10px',
 	fontSize:'150%',
-	paddingRight:'10px',
-	paddingLeft:'10px',
-	paddingBottom:'35px',
+	paddingRight:'15px',
+	paddingLeft:'15px',
+	paddingBottom:'37px',
 	paddingTop:'2px'
 }
 

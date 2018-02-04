@@ -14,7 +14,11 @@
 	font-family: cursive;
 	margin-left: 25px;
 	font-weight:  bold;
-	margin-right: 870px;
+	margin-right: 830px;
+}
+#barTitle a{
+	text-decoration: none;
+	color:white;
 }
 .appBar{
 	position:fixed;

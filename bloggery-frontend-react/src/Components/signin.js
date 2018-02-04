@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 import FlatButton from 'material-ui/FlatButton';
 import TitleBar from './titleBar';
 import TextField from 'material-ui/TextField';
-import './css/signup.css';
+import './css/signin.css';
 import Paper from 'material-ui/Paper';
 
  export default class Signup extends React.Component{
@@ -43,7 +43,7 @@ import Paper from 'material-ui/Paper';
 
 	render(){
 		return(
-			<div id='signUp'>
+			<div id='signIn'>
 
 			<TitleBar 
 			scrollVal={window.screen.height}			
@@ -54,11 +54,11 @@ import Paper from 'material-ui/Paper';
 			<ul class='list'>
 				<a href='/contact'><li>Contact Us</li></a>
 				<a href='/privacy'><li>Privacy</li></a>
-				<a href='/api'><li>About US</li></a>
+				<a href='/aboutus'><li>About US</li></a>
 			</ul>
 
-			<Paper id='form' zDepth={2}><br/><br/>
-				<form onSubmit={this.authenticate.bind(this)}>
+			<Paper id='formIn' zDepth={2}><br/><br/>
+				<form onSubmit={this.authenticate.bind(this)} methos="post">
 					 <TextField
 						hintText="Email"
 						type='email'
@@ -76,7 +76,7 @@ import Paper from 'material-ui/Paper';
 					<FlatButton type="submit" >Submit</FlatButton>
 				</form><br/>
 			</Paper>
-
+			<p id="newAcc">New to Bloggery? No worries, <a href="/signup">Sign Up</a></p>
 			</div>
 		)
 	}

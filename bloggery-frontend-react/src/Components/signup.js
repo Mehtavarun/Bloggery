@@ -47,8 +47,8 @@ import Paper from 'material-ui/Paper';
 
 			<TitleBar 
 			scrollVal={window.screen.height}			
-			showSignIn = {false} 
-			showSignUp = {true}
+			showSignIn = {true} 
+			showSignUp = {false}
 			/>
 
 			<ul class='list'>
@@ -58,7 +58,7 @@ import Paper from 'material-ui/Paper';
 			</ul>
 
 			<Paper id='form' zDepth={2}><br/><br/>
-				<form onSubmit={this.addUser.bind(this)}>
+				<form onSubmit={this.addUser.bind(this)} method='get'>
 					 <TextField
 						hintText="Email"
 						type='email'
@@ -79,7 +79,7 @@ import Paper from 'material-ui/Paper';
 					<FlatButton type="submit" >Submit</FlatButton>
 				</form><br/>
 			</Paper>
-
+			<p id='alreadyAcc'>Already have an account? <a href="/signin">Sign In</a></p>
 			</div>
 		)
 	}

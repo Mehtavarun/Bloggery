@@ -1,15 +1,15 @@
-#signUp{
-	background-image: url('../images/su.jpg');
+#signIn{
+	background-image: url('../images/s.jpg');
 	background-position: center;
 	background-repeat: no-repeat;
 	width:100%;
 	height: 656px;
 	margin:0px;
 }
-#form{
+#formIn{
 	position: absolute;
 	margin-left: 37%;
-	margin-top: 11%;
+	margin-top: 15%;
 	padding-left: 55px;
 	padding-right: 55px;	
 }
@@ -31,18 +31,18 @@ li{
 	text-decoration: none;
 	color:white;
 }
-#alreadyAcc{
+#newAcc{
 	color:#CFD8DC;
 	text-align: center;
 	font-weight: bold;
-	margin-top: 465px;
+	margin-top: 455px;
 	font-size:90%;
 	margin-right: 400px;
 }
-#alreadyAcc a{
+#newAcc a{
 	text-decoration: none;
-	color:#4CAF50;
+	color:#FB8C00;
 }
-#alreadyAcc a:hover{
+#newAcc a:hover{
 	text-decoration: underline;
 }

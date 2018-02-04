@@ -2,7 +2,11 @@ body{
 	scroll-behavior: smooth;
 	padding:0px;
 	margin:0px;
-	font-family: Lucida Sans Unicode;
+	font-family: Junction;
+}
+@font-face {
+    font-family: Junction;
+    src: url(../font/Junction-regular.otf);
 }
 .top{
 	background-image: url('../images/main.jpg');
