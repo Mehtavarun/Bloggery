@@ -2,10 +2,11 @@
 	padding: 0px;
 	font-family: cursive; 
 	overflow-x: hidden;
+	z-index: 50;
 }
 
 .appBar p{
-	display: inline
+	display: inline;
 }
 
 #barTitle{
@@ -14,7 +15,6 @@
 	font-family: cursive;
 	margin-left: 25px;
 	font-weight:  bold;
-	margin-right: 830px;
 }
 #barTitle a{
 	text-decoration: none;

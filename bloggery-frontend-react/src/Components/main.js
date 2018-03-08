@@ -48,7 +48,7 @@ export default class Main extends React.Component{
 		return(
 			<div className = "wrapper">
 				<TitleBar 
-					scrollVal={0} 
+					scrollVal={window.screen.height/4} 
 					showSignUp = {true} 
 					showSignIn = {true}
 					/>
@@ -60,9 +60,9 @@ export default class Main extends React.Component{
 			 			<ArrowDownward color={deepPurple50} />
 			 	</FloatingActionButton>
 			 	{(this.state.pageYOffset>=window.screen.height/4)?
-			 		<h5 class='welcome animated fadeOut'>We Welcome you whole heartedly :)</h5>
+			 		<h5 className='welcome animated fadeOut'>We Welcome you whole heartedly :)</h5>
 						:
-					<h5 class='welcome'>We Welcome you whole heartedly :)</h5>}
+					<h5 className='welcome animated fadeIn'>We Welcome you whole heartedly :)</h5>}
 			 	<Top />
 				<Mid />
 				<Bottom />
@@ -76,13 +76,17 @@ class Top extends React.Component{
 	render(){
 		return(
 			<div className = "top animated fadeInDown">
+			
 				<ul>
-					<a href=''><li>Contact Us</li></a>
-					<a href=''><li>Privacy</li></a>
-					<a href='/api'><li>About US</li></a>
+					<a href='/contact'><li>Contact Us</li></a>
+					<a href='/privacy'><li>Privacy</li></a>
+					<a href='/aboutus'><li>About US</li></a>
 				</ul>
+
 			 	<h2 className = "animated fadeInDown">start blog today.</h2><br/>
+
 			 	<p className = "topText animated fadeIn">you will never forget experience with<br/> bloggery...</p>
+			 	
 			 	<FlatButton 
 			 		id = "getStartedButton" 
 			 		backgroundColor= '#a4c639' 
@@ -92,6 +96,7 @@ class Top extends React.Component{
 			 		href='/signup'>
 			 			Get Started
 			 	</FlatButton><br/>
+
 			 	<FlatButton 
 			 		id = "signInButton" 
 			 		backgroundColor= '#3d5afe' 
@@ -114,52 +119,72 @@ class Mid extends React.Component{
 
 	render(){
 		return(
-			<div className = 'middle'>			
+			<div className = 'middle'>	
+
 			<div className = 'middle1'>
+				
 				<ScrollAnimation animateIn="fadeInLeft" >
+				
 					<p className='firstBlock'>Turns out that when you make it
-					easy to create interesting things, 
-					that’s exactly what people do. All
-					those great, random blogs your friends
-					send you, those are Bloggery. We’ll
-					help you find and follow blogs like that.
+						easy to create interesting things, 
+						that’s exactly what people do. All
+						those great, random blogs your friends
+						send you, those are Bloggery. We’ll
+						help you find and follow blogs like that.
 					</p>
+			
 				</ScrollAnimation>
+			
 				<ScrollAnimation animateIn="fadeInRight">
+			
 					<img height='260' src={image3} alt='due to some reasons is not available'/>
+			
 				</ScrollAnimation>
+			
 			</div>
+
 			<div className = 'middle2'>
+				
 				<ScrollAnimation animateIn="fadeInLeft">
+				
 					<img height='300' src={image2} alt='due to some reasons is not available'/>
+				
 				</ScrollAnimation>
+				
 				<ScrollAnimation animateIn="fadeInRight" >
-				<p className='firstBlock'>
-					Turns out that when you make it
-					easy to create interesting things, 
-					that’s exactly what people do. All
-					those great, random blogs your friends
-					send you, those are Bloggery. We’ll
-					help you find and follow blogs like that.
+
+					<p className='firstBlock'>
+						Turns out that when you make it
+						easy to create interesting things, 
+						that’s exactly what people do. All
+						those great, random blogs your friends
+						send you, those are Bloggery. We’ll
+						help you find and follow blogs like that.
 					</p>
+
 				</ScrollAnimation>
 			</div>
+
 			<div className = 'middle3'>
 				<ScrollAnimation animateIn="fadeInLeft" >
-				<p className='firstBlock'>
-					Turns out that when you make it
-					easy to create interesting things, 
-					that’s exactly what people do. All
-					those great, random blogs your friends
-					send you, those are Bloggery. We’ll
-					help you find and follow blogs like that.
+
+					<p className='firstBlock'>
+						Turns out that when you make it
+						easy to create interesting things, 
+						that’s exactly what people do. All
+						those great, random blogs your friends
+						send you, those are Bloggery. We’ll
+						help you find and follow blogs like that.
 					</p>
 				</ScrollAnimation>
 
 				<ScrollAnimation animateIn="fadeInRight">
+				
 					<img height='300' src={image1} alt='due to some reasons is not available'/>
+				
 				</ScrollAnimation>
 			</div>
+
 			</div>
 		)
 	}

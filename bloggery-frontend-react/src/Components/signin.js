@@ -46,7 +46,7 @@ import Paper from 'material-ui/Paper';
 			<div id='signIn'>
 
 			<TitleBar 
-			scrollVal={window.screen.height}			
+			scrollVal={0}			
 			showSignIn = {false} 
 			showSignUp = {true}
 			/>
@@ -58,25 +58,36 @@ import Paper from 'material-ui/Paper';
 			</ul>
 
 			<Paper id='formIn' zDepth={2}><br/><br/>
-				<form onSubmit={this.authenticate.bind(this)} methos="post">
+
+				<form onSubmit={this.authenticate.bind(this)} method="post">
+
 					 <TextField
 						hintText="Email"
 						type='email'
 						name='email'
 						onChange={this.checkEmail.bind(this)}
 						value={this.state.email}
-					/><br/><br/>
+						/><br/><br/>
+				
 					<TextField
 						hintText="Password"
 						type="password"
 						name='password'
 						onChange={this.checkPass.bind(this)}
 						value={this.state.pass}
-					/><br/><br/>
-					<FlatButton type="submit" >Submit</FlatButton>
+						/><br/><br/>
+				
+					<FlatButton type="submit" href='/dashboard'>
+						Submit
+					</FlatButton>
+				
 				</form><br/>
 			</Paper>
-			<p id="newAcc">New to Bloggery? No worries, <a href="/signup">Sign Up</a></p>
+
+			<p id="newAcc">
+				New to Bloggery? No worries, <a href="/signup">Sign Up</a>
+			</p>
+			
 			</div>
 		)
 	}

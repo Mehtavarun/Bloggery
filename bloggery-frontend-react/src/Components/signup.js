@@ -46,40 +46,51 @@ import Paper from 'material-ui/Paper';
 			<div id='signUp'>
 
 			<TitleBar 
-			scrollVal={window.screen.height}			
+			scrollVal={0}			
 			showSignIn = {true} 
 			showSignUp = {false}
 			/>
 
-			<ul class='list'>
+			<ul id='listUp'>
 				<a href='/contact'><li>Contact Us</li></a>
 				<a href='/privacy'><li>Privacy</li></a>
-				<a href='/api'><li>About US</li></a>
+				<a href='/aboutus'><li>About US</li></a>
 			</ul>
 
 			<Paper id='form' zDepth={2}><br/><br/>
+
 				<form onSubmit={this.addUser.bind(this)} method='get'>
+
 					 <TextField
 						hintText="Email"
 						type='email'
 						name='email'
 						onChange={this.checkEmail.bind(this)}
 						value={this.state.email}
-					/><br/><br/>
+						/><br/><br/>
+
 					<TextField
 						hintText="Password"
 						type="password"
 						name='password'
 						onChange={this.checkPass.bind(this)}
 						value={this.state.pass}
-					/><br/><br/>
+						/><br/><br/>
+
 					<TextField
 						hintText="Username"
 					/><br/><br/>
-					<FlatButton type="submit" >Submit</FlatButton>
+					
+					<FlatButton type="submit" href='/dashboard'>
+						Submit
+					</FlatButton>
+				
 				</form><br/>
 			</Paper>
-			<p id='alreadyAcc'>Already have an account? <a href="/signin">Sign In</a></p>
+			
+			<p id='alreadyAcc'>Already have an account? <a href="/signin">Sign In</a>
+			</p>
+			
 			</div>
 		)
 	}

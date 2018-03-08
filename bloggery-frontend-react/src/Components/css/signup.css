@@ -16,18 +16,18 @@
 a:hover{
 	color:#cbd1d3;
 }
-.list{
+#listUp{
 	list-style-type: none;
 	display: inline;
 	color:white;
-	float: left;
 	margin-top: 600px;
+	position: relative;
 }	
 li{
 	display: inline;
 	padding: 20px;
 }
-.list a{
+#listUp a{
 	text-decoration: none;
 	color:white;
 }
@@ -37,7 +37,8 @@ li{
 	font-weight: bold;
 	margin-top: 465px;
 	font-size:90%;
-	margin-right: 400px;
+	margin-left: 400px;
+	z-index: 100;
 }
 #alreadyAcc a{
 	text-decoration: none;
