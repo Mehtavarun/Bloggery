@@ -1,13 +1,48 @@
 #dashboard{
-	background-color: #EEEEEE;
+	background-color: #0336FF;
 	width: 100%;
 	height: 100%;
 
 }
 .centerDash{
-	background-color: #EEEEEE;
-	margin-left: 150px;
+	background-color: #0336FF;
 	padding-top:75px;
-	width: 50%;
-	box-shadow: 0px 0px 2px 2px grey;
+	width: 100%;
+	display: flex;
+
+	/*
+	grid-column-gap: 30px; 
+	grid-template-columns: 50% 50%;*/
+
+	/*
+	box-shadow: 0px 0px 2px 2px grey;*/
 }
+/*.centerDash #topRightGap{
+	margin-top:-100px;
+	padding:0px;
+}*/
+	
+#left-grid, #right-grid{
+	margin-left: auto;
+	margin-right: auto;
+}
+/*.sideActionBar{
+	height:35%;
+	width: 22%;
+	box-shadow:0px 0px 2px 2px grey; 
+	background-color: white;
+	position: sticky;
+	float:right;
+	top: 100px;
+	margin-right:0px;
+	margin-bottom:100px;
+
+
+	<div className = 'sideActionBar'>
+					<ul>
+					<li>Sign out</li>
+					<li>Profile</li>
+					<li>Contact Us</li>
+					</ul>
+				</div>
+}*/

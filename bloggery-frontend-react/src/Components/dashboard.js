@@ -11,6 +11,17 @@ import Img from './images/s.jpg'
 import { Card, CardActions, CardHeader, CardMedia } from 'material-ui/Card';
 import img from './images/2.jpg'
 
+const cardStyleLeft = {
+	marginBottom:'2px',
+	marginTop: '6px',
+	marginRight: '-14px'
+};
+const cardStyleRight = {
+	marginBottom:'2px',
+	marginTop: '6px',
+	marginRight: '-14px'
+};
+
 export default class Dashboard extends React.Component{
 
 	constructor(props){
@@ -64,73 +75,114 @@ export default class Dashboard extends React.Component{
 
 				<div className='centerDash'>
 					
-					<Card style={{marginBottom:'20px'}}>
-
+					<div id="left-grid">
+					<Card style={cardStyleLeft}>
 						<CardHeader
 						  title="Name Avatar"
 					      avatar="./images/1.jpg"
 						/>
-
 						<CardMedia>
-
-							<img src={img} alt='could not loaded'/>
-
+							<img src={img} alt='could not be loaded'/>
 						</CardMedia>
-
 						<CardActions>
-
-							<FlatButton label='Like It'/>
-							<FlatButton label='Share'/>
-
+							<FlatButton label='Cool'/>
 						</CardActions>
 
 					</Card>
-					<Card style={{marginBottom:'20px'}}>
 
+					<Card style={cardStyleRight}>
 						<CardHeader
 						  title="Name Avatar"
 					      avatar="./images/1.jpg"
 						/>
-
 						<CardMedia>
-
-							<img src={img} alt='could not loaded'/>
-
+							<img src={img} alt='could not be loaded'/>
 						</CardMedia>
-
 						<CardActions>
-
-							<FlatButton label='Like It'/>
-							<FlatButton label='Share'/>
-
+							<FlatButton label='Cool'/>
 						</CardActions>
-
-					</Card>
-					<Card style={{marginBottom:'20px'}}>
-
+					</Card><Card style={cardStyleLeft}>
 						<CardHeader
 						  title="Name Avatar"
 					      avatar="./images/1.jpg"
 						/>
-
 						<CardMedia>
-
-							<img src={img} alt='could not loaded'/>
-
+							<img src={img} alt='could not be loaded'/>
 						</CardMedia>
-
 						<CardActions>
-
-							<FlatButton label='Like It'/>
-							<FlatButton label='Share'/>
-
+							<FlatButton label='Cool'/>
 						</CardActions>
 
 					</Card>
+
+					<Card style={cardStyleRight}>
+						<CardHeader
+						  title="Name Avatar"
+					      avatar="./images/1.jpg"
+						/>
+						<CardMedia>
+							<img src={img} alt='could not be loaded'/>
+						</CardMedia>
+						<CardActions>
+							<FlatButton label='Cool'/>
+						</CardActions>
+					</Card><Card style={cardStyleLeft}>
+						<CardHeader
+						  title="Name Avatar"
+					      avatar="./images/1.jpg"
+						/>
+						<CardMedia>
+							<img src={img} alt='could not be loaded'/>
+						</CardMedia>
+						<CardActions>
+							<FlatButton label='Cool'/>
+						</CardActions>
+
+					</Card>
+
+					<Card style={cardStyleRight}>
+						<CardHeader
+						  title="Name Avatar"
+					      avatar="./images/1.jpg"
+						/>
+						<CardMedia>
+							<img src={img} alt='could not be loaded'/>
+						</CardMedia>
+						<CardActions>
+							<FlatButton label='Cool'/>
+						</CardActions>
+					</Card>
+					</div>
+					<div id="right-grid">
+					<Card style={cardStyleLeft}>
+						<CardHeader
+						  title="Name Avatar"
+					      avatar="./images/1.jpg"
+						/>
+						<CardMedia>
+							<img src={img} alt='could not be loaded'/>
+						</CardMedia>
+						<CardActions>
+							<FlatButton label='Like It'/>
+							<FlatButton label='Share'/>
+						</CardActions>
+					</Card>
+
+					<Card style={cardStyleRight}>
+						<CardHeader
+						  title="Name Avatar"
+					      avatar="./images/1.jpg"
+						/>
+						<CardMedia>
+							<img src={img} alt='could not be loaded'/>
+						</CardMedia>
+						<CardActions>
+							<FlatButton label='Like It'/>
+							<FlatButton label='Share'/>
+						</CardActions>
+					</Card>
+					</div>
 				</div>		
-				
-					<br/>	
-			
 			</div>
 		)
 	}
